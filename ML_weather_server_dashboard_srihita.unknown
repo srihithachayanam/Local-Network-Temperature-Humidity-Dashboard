@@ -1,71 +1,3 @@
-ML Features Implemented:
-1. Predictive Analytics
-
-Linear Regression for temperature & humidity trends
-1-hour ahead predictions based on historical patterns
-Trend visualization (rising/falling/stable)
-
-2. Anomaly Detection
-
-Z-score method to detect unusual spikes
-Alerts when readings deviate >2.5 standard deviations
-Real-time anomaly notifications
-
-3. Comfort Index Algorithm
-
-Heat Index calculation (feels-like temperature)
-Optimal range analysis (20-26°C, 40-60% humidity)
-Visual comfort score (0-100) with color-coded bar
-
-4. Statistical Analysis
-
-Running mean & standard deviation
-Data collection (stores last 100 samples)
-Pattern recognition over time
-
-How It Works:
-Data Collection:
-
-Collects samples every 2 seconds
-Stores 100 most recent readings
-Analyzes patterns after 10+ samples
-
-ML Algorithms:
-
-Linear Regression: Calculates temperature/humidity rate of change
-Z-Score Anomaly Detection: Identifies outliers automatically
-Comfort Scoring: Multi-factor analysis of ideal conditions
-
-Predictions:
-
-Uses trend slopes to forecast 1 hour ahead
-Updates in real-time as new data arrives
-More accurate after 20+ samples
-
-What You'll See:
-📊 Real-time trends (e.g., "+0.5°C/hour")
-🔮 Future predictions (temperature in 1 hour)
-⚠️ Anomaly alerts when unusual changes occur
-😊 Comfort score (0-100) with visual bar
-📈 Statistical insights (mean, std dev, samples)
-The ML runs entirely on the ESP32 - no cloud needed! It learns your environment's patterns and alerts you to unusual conditions automatically.
-
-
-####3 How to connect #####
-turn on phone hotspot 
-set name as "circuitX"
-password"1029384756"
-connect the dashboard viewing device ie phone laptop to same phone hotspot 
- now we must see 2 devices connected ie  our esp32 and viewing decice 
-     
-
-
-=== FINAL CONNECTION INFO ===
-Access dashboard at: http://10.49.99.100
-============================
-+++++++++++++++++++++++CODE++++++++++++++++++++++++++++++
-
-
 #include <WiFi.h>
 #include <WebServer.h>
 #include <DHT.h>
@@ -584,4 +516,5 @@ void handleML() {
   json += "}";
   server.send(200, "application/json", json);
 }
+
 
