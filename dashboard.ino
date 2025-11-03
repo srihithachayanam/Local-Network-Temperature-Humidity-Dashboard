@@ -7,7 +7,7 @@
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
-// WiFi Credentials
+// WiFi Credentials:
 const char* ssid = "circuitX";
 const char* password = "1029384756";
 
@@ -516,5 +516,6 @@ void handleML() {
   json += "}";
   server.send(200, "application/json", json);
 }
+
 
 
